@@ -1,92 +1,27 @@
-// Theme Management
+const root = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
-const htmlElement = document.documentElement;
-
-// Get the preferred theme from localStorage or system preference
-function getPreferredTheme() {
-    // Check localStorage first
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-        return storedTheme;
-    }
-
-    // Check system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-    }
-
-    // Default to light
-    return 'light';
+function updateThemeButton() {
+  const isLight = root.dataset.theme === 'light';
+  themeToggle.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
 }
-
-// Set the theme
-function setTheme(theme) {
-    htmlElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-
-    // Update button state
-    updateThemeToggleButton(theme);
-}
-
-// Update the button state
-function updateThemeToggleButton(theme) {
-    themeToggle.setAttribute('data-theme', theme);
-    if (theme === 'dark') {
-        themeToggle.setAttribute('aria-label', 'Switch to light mode');
-    } else {
-        themeToggle.setAttribute('aria-label', 'Switch to dark mode');
-    }
-}
-
-// Initialize theme on page load
-function initTheme() {
-    const preferredTheme = getPreferredTheme();
-    setTheme(preferredTheme);
-}
-
-// Toggle theme on button click
+updateThemeButton();
 themeToggle.addEventListener('click', () => {
-    const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
+  root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+  try { localStorage.setItem('theme', root.dataset.theme); } catch {}
+  updateThemeButton();
 });
-
-// Listen for system theme changes
-if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        // Only update if user hasn't set a preference
-        if (!localStorage.getItem('theme')) {
-            setTheme(e.matches ? 'dark' : 'light');
-        }
+if ('IntersectionObserver' in window) {
+  const links = [...document.querySelectorAll('nav a')].filter(link =>
+    link.getAttribute('href').startsWith('#')
+  );
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      links.forEach(link => {
+        if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
     });
+  }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+  links.forEach(link => { const section = document.querySelector(link.hash); if (section) observer.observe(section); });
 }
-
-// Initialize theme when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTheme);
-} else {
-    initTheme();
-}
-
-// Smooth scroll for links (if needed for future navigation)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        }
-    });
-});
-
-// Add keyboard shortcut for theme toggle (Shift + T)
-document.addEventListener('keydown', (e) => {
-    if (e.shiftKey && e.key === 'T') {
-        themeToggle.click();
-    }
-});
