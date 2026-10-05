@@ -1246,3 +1246,7 @@ h2.section-number {
     display: none;
   }
 }
+
+.company-logo:hover {
+  border-color: var(--accent);
+}
