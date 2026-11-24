@@ -144,7 +144,7 @@ nav a[aria-current] {
   color:var(--text)
 }
 
-.nav-resume {
+.nav-cv {
   font-size:14px;
   white-space:nowrap
 }
@@ -259,12 +259,21 @@ h1 span {
 }
 
 .hero-portrait figcaption {
+  margin-top:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.hero-portrait figcaption > span {
   font-family:var(--mono);
   font-size:11px;
   color:var(--muted);
-  margin-top:12px;
-  display:flex;
-  justify-content:space-between
+}
+
+.button.gallery-hero-mobile {
+  display:none;
 }
 
 .buttons,.social-links,.project-links {
@@ -379,7 +388,7 @@ h2 {
   margin:0
 }
 
-h3 {
+h3,.project-content h4 {
   font-size:25px;
   letter-spacing:-.03em;
   line-height:1.3;
@@ -465,28 +474,6 @@ p {
 
 .project-links a {
   border-bottom:1px solid var(--border)
-}
-
-.metrics {
-  display:flex;
-  gap:24px;
-  border-block:1px solid var(--border);
-  padding:16px 0;
-  margin-top:20px
-}
-
-.metrics strong {
-  display:block;
-  font-size:24px;
-  line-height:1.2;
-  letter-spacing:-.04em;
-  font-weight:500
-}
-
-.metrics span {
-  font-family:var(--mono);
-  font-size:10px;
-  color:var(--muted)
 }
 
 details {
@@ -693,7 +680,7 @@ nav a {
   min-height:44px
 }
 
-.nav-resume {
+.nav-cv {
   font-size:13px
 }
 
@@ -707,6 +694,19 @@ nav a {
 
 .hero-portrait {
   display:none
+}
+
+.button.gallery-hero-mobile {
+  display:inline-flex;
+}
+
+.hero-actions {
+  display:grid;
+  width:min(100%, 280px);
+}
+
+.hero-actions .button {
+  justify-content:space-between;
 }
 
 .hero-role {
@@ -771,10 +771,6 @@ nav a {
   gap:8px
 }
 
-.metrics {
-  gap:32px
-}
-
 h1 {
   font-size:clamp(44px,10vw,65px)
 }
@@ -805,7 +801,7 @@ h1 {
   fill: currentColor;
   vertical-align: -0.15em;
 }
-.nav-resume {
+.nav-cv {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -834,7 +830,7 @@ h1 {
 }
 .button .icon,
 .project-links .icon,
-.nav-resume .icon {
+.nav-cv .icon {
   width: 17px;
   height: 17px;
 }
@@ -1038,6 +1034,27 @@ h2.section-number {
 }
 .gallery-header {
   margin-bottom: 48px;
+}
+.gallery-back {
+  gap: 8px;
+  margin-bottom: 24px;
+}
+@media (min-width: 701px) {
+  .gallery-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 24px;
+  }
+  .gallery-header > p,
+  .gallery-header > h1 {
+    grid-column: 1;
+  }
+  .gallery-back {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    margin-bottom: 0;
+  }
 }
 .gallery-header h1 {
   font-size: clamp(48px, 7vw, 72px);
@@ -1249,4 +1266,193 @@ h2.section-number {
 
 .company-logo:hover {
   border-color: var(--accent);
+}
+
+.project-categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 3vw, 28px);
+}
+
+.project-category {
+  display: grid;
+  align-self: stretch;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  padding: 12px 0 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.project-category-covers {
+  position: relative;
+  display: block;
+  height: clamp(85px, 20vw, 205px);
+  isolation: isolate;
+}
+
+.project-category-covers img {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 55%;
+  height: 92%;
+  object-fit: cover;
+  border: 1px solid var(--border-hover);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 4px 16px rgb(0 0 0 / .24);
+  transition: transform 220ms ease;
+}
+
+.project-category-covers img:first-child {
+  right: 8%;
+  transform: rotate(8deg);
+}
+
+.project-category-covers img:last-child {
+  left: 8%;
+  transform: rotate(-8deg);
+}
+
+.project-category:is(:hover, :focus-visible) .project-category-covers img:first-child {
+  transform: translateY(-5px) rotate(10deg);
+}
+
+.project-category:is(:hover, :focus-visible) .project-category-covers img:last-child {
+  transform: translateY(-7px) rotate(-10deg);
+}
+
+.project-category-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: -12px;
+  padding: clamp(12px, 2.5vw, 24px);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius);
+  background: linear-gradient(165deg, var(--surface-hover), var(--surface));
+  box-shadow: 0 -5px 12px rgb(0 0 0 / .15), inset 0 1px rgb(128 128 128 / .16);
+  transition: border-color 180ms;
+}
+
+.project-category:is(:hover, :focus-visible) .project-category-label {
+  border-color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-category-covers img {
+    transition: none;
+  }
+}
+
+.project-category-label strong,
+.project-category-label small {
+  display: block;
+}
+
+.project-category-label strong {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.25;
+}
+
+.project-category-label small {
+  margin-top: 6px;
+  color: var(--secondary);
+  font-size: .8125rem;
+  line-height: 1.4;
+}
+
+.project-category-icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+}
+
+html:has(.project-dialog[open]) {
+  overflow: hidden;
+}
+
+.project-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+}
+
+.project-dialog::backdrop {
+  background: rgb(0 0 0 / .35);
+  backdrop-filter: blur(5px);
+}
+
+[data-theme=light] .project-dialog::backdrop {
+  background: rgb(24 24 27 / .18);
+}
+
+.project-dialog-dismiss {
+  position: fixed;
+  z-index: 1;
+  top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right));
+}
+
+.project-dialog-close {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.project-dialog-close:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-hover);
+}
+
+.project-dialog-content {
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  padding: max(68px, calc(env(safe-area-inset-top) + 56px)) 16px 32px;
+}
+
+.project-dialog-content::-webkit-scrollbar {
+  display: none;
+}
+
+.project-dialog-content .project {
+  max-width: 1040px;
+  margin-inline: auto;
+  padding: clamp(16px, 4vw, 36px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 6px 20px rgb(0 0 0 / .16);
+}
+
+.project-dialog-content .project + .project {
+  margin-top: clamp(16px, 3vw, 28px);
 }
