@@ -1,0 +1,570 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+\usepackage{color}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.45in}
+\addtolength{\evensidemargin}{-0.45in}
+\addtolength{\textwidth}{0.90in}
+\addtolength{\topmargin}{-0.45in}
+\addtolength{\textheight}{0.90in}
+
+\raggedright
+\raggedbottom
+\setlength{\tabcolsep}{0pt}
+\urlstyle{same}
+\renewcommand{\baselinestretch}{1.03}
+\pdfgentounicode=1
+
+\titleformat{\section}
+  {\large\scshape\raggedright}
+  {}{0em}{}
+  [\color{black}\titlerule]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeEducationItem}[1]{
+  \small{#1}\par
+  \vspace{2pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+  \begin{tabular*}{0.98\textwidth}
+    {l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}
+  \vspace{-3pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{0.98\textwidth}
+    {l@{\extracolsep{\fill}}r}
+    \small #1 & #2 \\
+  \end{tabular*}
+  \vspace{-3pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.12in,label={},itemsep=3pt,topsep=3pt]
+}
+
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}\vspace{-3pt}
+}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[leftmargin=0.20in,label=\textbullet,itemsep=2pt,parsep=0pt,topsep=3pt]
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-3pt}
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\textbf{Akwasi Poku Ofori Agyei}}\\[4pt]
+  {\small
+    Accra, Ghana \enspace\textbar\enspace
+    \href{tel:+233553822762}{+233 55 382 2762} \enspace\textbar\enspace
+    \href{mailto:akwasipoku.oforiagyei@gmail.com}{Email} \enspace\textbar\enspace
+    \href{https://www.linkedin.com/in/akwasi-agyei-57b083260/}{LinkedIn} \enspace\textbar\enspace
+    \href{https://github.com/apoa5}{GitHub} \enspace\textbar\enspace
+    \href{https://apoa5.github.io/portfolio/}{Portfolio}
+  }
+\end{center}
+\vspace{-3pt}
+
+\section{Education}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Kwame Nkrumah University of Science and Technology}
+    {Kumasi, Ghana}
+    {Bachelor of Science in Computer Science}
+    {Jan 2023 -- Sep 2026}
+
+  \vspace{2pt}
+
+  \resumeEducationItem{
+    \textbf{Cumulative Weighted Average:}
+    \textbf{79.52/100 (First Class)}
+  }
+
+  \resumeEducationItem{
+    \textbf{Relevant Coursework:}
+    Database Concepts and Technologies I \& II,
+    Probability and Statistics I,
+    Linear and Numerical Algebra,
+    Discrete Mathematics I \& II,
+    Data Structures I \& II,
+    Operating Systems,
+    Numerical Methods and Computation,
+    Introduction to Artificial Intelligence,
+    Graph Theory and Its Applications,
+    Operations Research I \& II,
+    Introduction to Software Engineering.
+  }
+
+  \resumeEducationItem{
+    \textbf{Best Results:}
+    Linear and Numerical Algebra (\textbf{95\%}),
+    Probability and Statistics I (\textbf{91\%}),
+    Discrete Mathematics II (\textbf{90\%}),
+    Operating Systems (\textbf{89\%}),
+    Database Concepts and Technologies I (\textbf{84\%}),
+    Database Concepts and Technologies II (\textbf{81\%}).
+  }
+\resumeSubHeadingListEnd
+
+\section{Professional Experience}
+
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Systems Engineer}
+    {Nov 2026 -- Present}
+    {AmaliTech}
+    {Ahodwo, Kumasi}
+
+  \resumeItemListStart
+    \resumeItem{
+      Develop and maintain backend services and APIs using
+      \textbf{Java}, including implementing application logic
+      and troubleshooting service issues.
+    }
+
+    \resumeItem{
+      Support \textbf{DevOps} workflows by contributing to
+      automated builds, testing, and deployment processes.
+    }
+
+    \resumeItem{
+      Support the deployment and operation of backend services
+      on \textbf{AWS}, including environment
+      configuration and troubleshooting.
+    }
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Software Engineer Intern}
+    {Sep 2025 -- Nov 2025}
+    {Npontu Technologies}
+    {Tse Addo, Accra}
+
+  \resumeItemListStart
+    \resumeItem{
+      Evaluated an in-house language model against
+      \textbf{GPT-5, Gemini, and LLaMA 3}
+      using structured prompting and qualitative
+      analysis to identify performance gaps and
+      cultural biases in African-context responses.
+    }
+
+    \resumeItem{
+      Contributed to a scalable full-stack application
+      supporting thousands of concurrent user interactions
+      by implementing authentication, payment processing,
+      and database migrations using
+      \textbf{PHP, Laravel, and Vue}.
+    }
+
+    \resumeItem{
+      Improved mobile application responsiveness
+      through component-based frontend architecture
+      and structured state management using
+      \textbf{React Native}.
+    }
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Information Technology Support Intern}
+    {Sep 2024 -- Nov 2024}
+    {Gigcorp Limited}
+    {Ridge, Accra}
+
+  \resumeItemListStart
+    \resumeItem{
+      Contributed in troubleshooting the Ghana Police eServices platform to identify system failures and validate expected system
+      behaviour by stress testing the application and using log-driven investigation.
+    }
+
+    \resumeItem{
+      Handled the reviewing and routing of online requests for police
+      reports required for employment and travel purposes
+      to the Criminal Data Services Bureau (CDSB) for
+      processing and printing.
+    }
+
+    \resumeItem{
+      Assisted staff to ensure completed physical police
+      reports were prepared for delivery and successfully delivered to applicants.
+    }
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Information Technology Support Intern}
+    {Oct 2023 -- Dec 2023}
+    {Gigcorp Limited}
+    {Ridge, Accra}
+
+  \resumeItemListStart
+    \resumeItem{
+      Cleaned, validated, and preprocessed
+      field-collected data used by proprietary
+      geolocation software.
+    }
+
+    \resumeItem{
+      Assisted with general office operations and
+      day-to-day administrative tasks such as data entry, supporting
+      smooth coordination of routine work in the office.
+    }
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Teaching Experience}
+
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Section Leader -- Code in Place}
+    {Oct 2026 -- Nov 2026}
+    {Stanford University}
+    {Remote}
+
+  \resumeItemListStart
+
+    \resumeItem{
+      Selected to lead an interactive section for students
+      learning introductory programming and computer science
+      through Stanford University's Code in Place program.
+    }
+
+    \resumeItem{
+      Taught and mentored students through programming exercises,
+      debugging, problem-solving, and core Python and
+      computer science concepts.
+    }
+
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Projects}
+
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{Chess Vision} $|$ \textit{Computer Vision System}}
+    {Nov 2026}
+
+  \vspace{-10pt}
+
+  \resumeItemListStart
+    \resumeItem{
+      Built an assisted computer vision pipeline that reconstructs
+      physical chess positions from photos, uploaded videos, and live
+      camera scans. It locates and orients the board, corrects
+      perspective, and extracts all 64 squares.
+    }
+
+    \resumeItem{
+      Fine-tuned \textbf{ConvNeXt V2 Tiny} on photographs and reviewed
+      video frames, then integrated it into the assisted recognition
+      workflow. The classifier uses RGB crops with target-square
+      masks to distinguish 12 piece classes and empty squares.
+    }
+
+    \resumeItem{
+      Built a \textbf{React and TypeScript} review interface that
+      lets users correct detected pieces, enter and confirm game-state
+      details, and copy the confirmed position in \textbf{FEN} format.
+    }
+
+    \resumeItem{
+      Project Links:
+      \href{https://github.com/apoa5/chess-vision}{\underline{Github}}
+      $|$
+      \href{https://lnkd.in/p/dTbR49dm}{\underline{Video Demo}}
+    }
+  \resumeItemListEnd
+
+  \vspace{1pt}
+
+  \small{
+    \textbf{Technologies:}
+    Python, OpenCV, PyTorch, React, TypeScript.
+  }
+
+  \vspace{10pt}
+
+  \resumeProjectHeading
+    {\textbf{EcoWatch} $|$ \textit{Geospatial Machine Learning System}}
+    {Aug 2026}
+
+  \vspace{-10pt}
+
+  \resumeItemListStart
+    \resumeItem{
+      Independently developed the complete machine
+      learning pipeline for detecting artisanal
+      and small-scale gold mining regions from
+      multispectral satellite imagery in Ghana,
+      including data cleaning, preprocessing,
+      partitioning, training, evaluation, and inference.
+    }
+
+    \resumeItem{
+      Developed and evaluated a
+      \textbf{13-band U-Net}
+      semantic segmentation model,
+      achieving \textbf{70.56\% Dice}
+      and \textbf{64.34\% IoU}
+      on a held-out test set of
+      \textbf{427 satellite images}.
+    }
+
+    \resumeItem{
+      Built an experimental training workflow using
+      BCE--Dice loss, AdamW optimization,
+      mixed-precision training, gradient clipping,
+      and validation-based checkpoint selection,
+      improving validation Dice from
+      \textbf{47.46\% to 74.50\%}.
+    }
+
+    \resumeItem{
+      Project Links:
+      \href{https://github.com/2026-Final-Year-Project/Ecowatch-model}
+      {\underline{Github}}
+      $|$
+      \href{https://drive.google.com/file/d/1ERKGoJ3af25sa_1fgWtWd1q27VEgjuBc/view?usp=drive_link}
+      {\underline{Video Demo}}
+    }
+  \resumeItemListEnd
+
+  \vspace{1pt}
+
+  \small{
+    \textbf{Technologies:}
+    Python, PyTorch, U-Net,
+    Google Earth Engine, Google Colab.
+  }
+
+  \vspace{10pt}
+
+  \resumeProjectHeading
+    {\textbf{KNUST Chess Club Website} $|$ \textit{Full-Stack Web Application}}
+    {Jan 2026}
+
+  \vspace{-10pt}
+
+  \resumeItemListStart
+    \resumeItem{
+      Contribute to the development and maintenance of the
+      official KNUST Chess Club website, implementing new
+      features and improving the platform for club members
+      and visitors.
+    }
+
+    \resumeItem{
+      Developed a live-streaming feature for over-the-board and online club tournament chess games, enabling authorized administrators to broadcast matches for visitors to watch directly
+      through the website.
+    }
+
+    \resumeItem{
+      Project Link:
+      \href{https://knustchess.vercel.app/events}
+      {\underline{Live Website}}
+    }
+  \resumeItemListEnd
+
+  \vspace{1pt}
+
+  \small{
+    \textbf{Technologies:} React.js, Vercel.
+  }
+
+  \vspace{10pt}
+
+  \resumeProjectHeading
+    {\textbf{SmartCards} $|$ \textit{AI-Powered Learning Application}}
+    {Jun 2025}
+
+  \vspace{-10pt}
+
+  \resumeItemListStart
+    \resumeItem{
+      Built a free study app with \textbf{React and Vite},
+      featuring interactive flashcards and
+      multiple-choice quizzes with immediate answer feedback.
+    }
+
+    \resumeItem{
+      Implemented a \textbf{Flask REST API} to extract and clean text
+      from PDF, TXT, DOCX, and PPTX uploads, cap input length,
+      and validate generated responses before display.
+    }
+
+    \resumeItem{
+      Integrated \textbf{Groq} inference with \textbf{GPT-OSS 20B}
+      to generate flashcards and quizzes from the extracted notes.
+    }
+
+    \resumeItem{
+      Deployed the frontend and backend on \textbf{Vercel} and
+      implemented shared rate and usage limits with
+      \textbf{Upstash Redis}. Used atomic Lua scripts to enforce
+      per-client and global request budgets across serverless instances.
+    }
+
+    \resumeItem{
+      Project Links:
+      \href{https://github.com/apoa5/smart-cards}
+      {\underline{Github}}
+      $|$
+      \href{https://smart-cards-olive.vercel.app/}
+      {\underline{Live Website}}
+    }
+  \resumeItemListEnd
+
+  \vspace{1pt}
+
+  \small{
+    \textbf{Technologies:}
+    Python, Flask, React, Vite, Tailwind CSS, Groq, Upstash Redis, Vercel.
+  }
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.20in,label=\textbullet,itemsep=2pt,topsep=3pt]
+  \small{
+    \item{
+      \textbf{Programming Languages:}
+      Python, JavaScript, TypeScript, Java, C, C++, PHP, SQL, Lua.
+    }
+
+    \item{
+      \textbf{Software Development:}
+      React (React.js), React Native, Next.js, Vite, Tailwind CSS,
+      Flask, Express, Laravel, Vue, Spring Boot, REST APIs.
+    }
+
+    \item{
+      \textbf{Testing:}
+      JUnit 5, Mockito.
+    }
+
+    \item{
+      \textbf{Data \& Machine Learning:}
+      Pandas, NumPy, PyTorch, Keras, JAX, OpenCV,
+      Google Earth Engine, Google Colab.
+    }
+
+    \item{
+      \textbf{Models \& AI Inference:}
+      ConvNeXt V2 Tiny, U-Net, GPT-5, Gemini, LLaMA 3,
+      GPT-OSS 20B, Groq.
+    }
+
+    \item{
+      \textbf{Cloud Computing \& DevOps:}
+      AWS (Amazon EC2, Amazon S3, IAM, VPC, Amazon RDS,
+      CloudWatch, AWS CLI), Vercel, Linux, Git, SSH.
+    }
+
+    \item{
+      \textbf{Data Storage:}
+      Upstash Redis.
+    }
+  }
+\end{itemize}
+
+\clearpage
+\section{Certifications \& Professional Development}
+
+\begin{itemize}[leftmargin=0.20in,label=\textbullet,itemsep=2pt,topsep=3pt]
+  \small{
+    \item{
+      \textbf{AWS Certified Cloud Practitioner}
+    }
+
+    \item{
+      \textbf{Google DeepMind -- AI Research Fundamentals}
+      -- Four-course series covering small language models,
+      language data, neural networks, and
+      transformer architectures.
+    }
+
+    \item{
+      \textbf{MLC Africa -- NLP Research Focus Group Contributor}
+      -- Participated in collaborative discussions
+      on NLP challenges involving African languages
+      and low-resource linguistic settings.
+    }
+
+    \item{
+      \textbf{Deep Learning Indaba, 2026 -- Virtual Attendee}
+      -- Attended virtual tutorial sessions, workshops, and mentorship sessions focused on
+      developments in machine learning research,
+      and the African AI community.
+    }
+
+    \item{
+      \textbf{Ghana Data Science Summit (IndabaX Ghana), 2026}
+      -- Participated in machine learning tutorials,
+      workshops, mentorship sessions, and
+      technical discussions.
+    }
+  }
+\end{itemize}
+
+\section{Awards \& Extracurricular Activities}
+
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{KNUST Chess Club} $|$ \textit{Team Member and Mentor}}
+    {}
+
+  \resumeItemListStart
+    \resumeItem{
+      Mentored at least 10 new club members
+      and participated in chess outreach at
+      a local elementary school, teaching
+      chess fundamentals to at least 50 students.
+    }
+
+    \resumeItem{
+      Won the university chess championship
+      and represented KNUST in two national
+      tournaments.
+    }
+  \resumeItemListEnd
+
+  \vspace{2pt}
+
+  \small{
+    \textbf{Best Elective ICT Student}
+    -- Adisadel College, 2020. (High School)
+  }
+\resumeSubHeadingListEnd
+
+\end{document}
